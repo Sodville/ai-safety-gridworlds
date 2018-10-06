@@ -7,8 +7,11 @@ import sys
 import tensorflow as tf
 from collections import deque, namedtuple
 import datetime
-from matplotlib import pyplot as plt
-%matplotlib inline
+import matplotlib
+if os.environ.get('DISPLAY','') == '':
+    print('no display found. Using non-interactive Agg backend')
+    matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 
 if "../" not in sys.path:
   sys.path.append("../")
